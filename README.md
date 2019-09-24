@@ -23,5 +23,6 @@ npm start
 
 ## 版本历史
 
+- 0.0.3 支持 es6 语法，开发环境支持自动重新加载代码
 - 0.0.2 增加 koa-router 以及一个 CRUD 的示例
 - 0.0.1 helloworld
