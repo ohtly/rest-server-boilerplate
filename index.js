@@ -3,7 +3,7 @@ const Router = require('koa-router');
 const koaBody = require('koa-body')
 const router = new Router();
 
-const users = require('./user')
+import users from './user'
 
 const app = new Koa();
 

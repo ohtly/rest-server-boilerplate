@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     findById: function (ctx) {
         let { id } = ctx.params
         const result = {
@@ -41,5 +41,6 @@ module.exports = {
                 offset
             }
         }
+        console.log('find by conditions')
     }
 }
