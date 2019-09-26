@@ -3,7 +3,9 @@ const Router = require('koa-router');
 const koaBody = require('koa-body')
 const router = new Router();
 
+import { logger } from './logger'
 import users from './user'
+import products from './product'
 
 const app = new Koa();
 
@@ -21,9 +23,13 @@ router.put('/user/:id', users.update)
 router.del('/user/:id', users.delete)
 router.get('/users', users.findByConditions)
 
+router.get('/products',products.findAll)
+
 app
     .use(koaBody())
     .use(router.routes())
     .use(router.allowedMethods());
 
 app.listen(3000);
+
+logger.info(`server startup, visit http://localhost:3000`)

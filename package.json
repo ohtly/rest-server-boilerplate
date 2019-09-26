@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon index.js --exec babel-node"
+    "dev": "NODE_ENV=development npx nodemon ./src/app.js --exec babel-node",
+    "start": "NODE_ENV=production npx babel-node src/app.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
   "dependencies": {
     "koa": "^2.8.1",
     "koa-body": "^4.1.1",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "node-watch": "^0.6.3",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

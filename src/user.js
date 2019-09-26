@@ -1,3 +1,5 @@
+import { logger } from './logger'
+
 export default {
     findById: function (ctx) {
         let { id } = ctx.params
@@ -9,16 +11,17 @@ export default {
     },
     create: function (ctx) {
         let { name } = ctx.request.body
-        console.log(`create user name is ${name}`)
+        logger.debug(`create user name is ${name}`)
         ctx.body = {
             message: 'create success'
         }
         ctx.status = 201
     },
     update: function (ctx) {
+        logger.debug('update ..')
         let { id } = ctx.params
         let { name } = ctx.request.body
-        console.log(`id: ${id} user name update with ${name}`)
+        console.debug(`id: ${id} user name update with ${name}`)
         ctx.body = {
             message: 'update success'
         }
