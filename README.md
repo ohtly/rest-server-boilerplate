@@ -40,7 +40,7 @@ npm start
 
 默认日志级别为 info，可通过配置文件./log/config.json 设置为 debug
 
-##### 生产环境
+#### 生产环境
 
 日志均写入./log 目录下的对应日志文件。
 
