@@ -7,6 +7,8 @@ restful api server boilerplate.
 ## 基本特性
 
 - 使用 babel 支持 es6 语法
+- 使用 nodemon 做开发环境的 reload
+- 使用 winston 记录日志
 
 ## 如何使用
 
@@ -18,7 +20,7 @@ restful api server boilerplate.
 npm i
 ```
 
-启动开发环境（通过 nodemon reload）：
+启动开发环境：
 
 ```
 npm run dev
