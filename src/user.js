@@ -1,4 +1,4 @@
-import { logger } from './logger'
+import { logger, setDebug } from './logger'
 
 export default {
     findById: function (ctx) {
@@ -21,7 +21,7 @@ export default {
         logger.debug('update ..')
         let { id } = ctx.params
         let { name } = ctx.request.body
-        console.debug(`id: ${id} user name update with ${name}`)
+        logger.debug(`id: ${id} user name update with ${name}`)
         ctx.body = {
             message: 'update success'
         }
@@ -29,7 +29,7 @@ export default {
     },
     delete: function (ctx) {
         let { id } = ctx.params
-        console.log(`id: ${id} user deleted.`)
+        logger.debug(`id: ${id} user deleted.`)
         ctx.body = {
             message: 'delete success'
         }
@@ -44,6 +44,6 @@ export default {
                 offset
             }
         }
-        console.log('find by conditions')
+        logger.info('find by conditions')
     }
 }

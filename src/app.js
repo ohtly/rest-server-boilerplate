@@ -23,7 +23,7 @@ router.put('/user/:id', users.update)
 router.del('/user/:id', users.delete)
 router.get('/users', users.findByConditions)
 
-router.get('/products',products.findAll)
+router.get('/products', products.findAll)
 
 app
     .use(koaBody())

@@ -8,7 +8,7 @@ restful api server boilerplate.
 
 - 使用 babel 支持 es6 语法
 - 使用 nodemon 做开发环境的 reload
-- 使用 winston 记录日志
+- 使用 winston 记录日志，并可在运行时打开和关闭 debug 日志
 
 ## 如何使用
 
@@ -20,13 +20,23 @@ restful api server boilerplate.
 npm i
 ```
 
-启动开发环境：
+#### 启动开发环境
+
+启动开发环境
 
 ```
 npm run dev
 ```
 
-启动生产环境
+#### 启动生产环境
+
+编译：
+
+```
+npm run build
+```
+
+启动：
 
 ```
 npm start
@@ -35,6 +45,27 @@ npm start
 ### 日志
 
 日志使用 winston。
+
+#### 基本使用
+
+引用和记录日志：
+
+```js
+import { logger } from "./logger";
+
+logger.error("..");
+logger.warn("..");
+logger.info("..");
+logger.debug("..");
+```
+
+动态设置 debug 日志：
+
+```js
+import { logger, setDebug } from "./logger";
+
+setDebug(true);
+```
 
 #### 开发环境
 

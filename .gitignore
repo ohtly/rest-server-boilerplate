@@ -64,3 +64,4 @@ typings/
 ## customer
 *.log
 dist
+.DS_Store

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development npx nodemon ./src/app.js --exec babel-node",
-    "start": "NODE_ENV=production npx babel-node src/app.js"
+    "start": "NODE_ENV=production node ./dist/app",
+    "build": "babel ./src --out-dir dist"
   },
   "repository": {
     "type": "git",
