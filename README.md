@@ -134,6 +134,7 @@ docker 的使用参考了[Docker and Node.js Best Practices](https://github.com/
 
 ## 版本历史
 
+- 0.0.7 增加进程退出的处理机制
 - 0.0.6 增加 docker 部署方式，参考[Docker and Node.js Best Practices](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 - 0.0.5 增加编译代码命令，生成生产用代码，并实现运行时切换日志 debug 模式功能
 - 0.0.4 实现日志功能，区分开发环境和生产环境

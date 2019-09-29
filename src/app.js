@@ -1,11 +1,13 @@
-const Koa = require('koa');
-const Router = require('koa-router');
-const koaBody = require('koa-body')
-const router = new Router();
+import Koa from 'koa'
+import Router from 'koa-router'
+import koaBody from 'koa-body'
+const router = new Router()
 
 import { logger } from './logger'
 import users from './user'
 import products from './product'
+import { handleShutdown } from './shutdown'
+import delay from 'delay'
 
 const app = new Koa();
 
@@ -30,6 +32,12 @@ app
     .use(router.routes())
     .use(router.allowedMethods());
 
-app.listen(3000);
+const server = app.listen(3000);
+handleShutdown(server, {
+    async onShutdown() {
+        await delay(1000*5)
+        logger.info('release connection.')
+    }
+})
 
 logger.info(`server startup, visit http://localhost:3000`)
