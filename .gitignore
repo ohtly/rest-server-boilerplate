@@ -66,3 +66,4 @@ typings/
 dist
 .DS_Store
 log
+config/config.json
