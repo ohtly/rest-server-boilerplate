@@ -35,7 +35,8 @@ app
 const server = app.listen(3000);
 handleShutdown(server, {
     async onShutdown() {
-        await delay(1000*5)
+        // 模拟一个关闭数据库连接的过程
+        await delay(500)
         logger.info('release connection.')
     }
 })

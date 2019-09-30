@@ -2,7 +2,7 @@
 
 restful api server boilerplate.
 
-本项目逐步将从 helloworld 开始，逐步演化到可供开发者作为模板使用。
+本项目将从 helloworld 开始，逐步演化到可供开发者作为模板使用。
 
 ## 目录
 
@@ -27,6 +27,7 @@ restful api server boilerplate.
 - 使用 nodemon 做开发环境的 reload
 - 使用 winston 记录日志，并可在运行时打开和关闭 debug 日志
 - docker 的支持，生成 docker 镜像，并作为容器部署
+- 进程退出的处理机制
 
 ## 如何使用
 

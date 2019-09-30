@@ -65,3 +65,4 @@ typings/
 *.log
 dist
 .DS_Store
+log
