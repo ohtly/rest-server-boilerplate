@@ -11,14 +11,15 @@ restful api server boilerplate.
 - [基本特性](#基本特性)
 - [如何使用](#如何使用)
   - [启动](#启动)
+    - [创建配置文件](#创建配置文件)
     - [启动开发环境](#启动开发环境)
     - [启动生产环境](#启动生产环境)
   - [日志](#日志)
     - [基本使用](#基本使用)
     - [开发环境](#开发环境)
     - [生产环境](#生产环境)
+  - [docker 的使用](#docker-的使用)
 - [版本历史](#版本历史)
-  <!-- Added by: marshal, at: 2019年 9月28日 星期六 20时01分31秒 CST -->
   <!--te-->
 
 ## 基本特性
@@ -38,6 +39,12 @@ restful api server boilerplate.
 ```
 npm i
 ```
+
+#### 创建配置文件
+
+配置文件在 /config/config.json
+
+可复制 config.json.template 为 config.json
 
 #### 启动开发环境
 
@@ -96,9 +103,9 @@ setDebug(true);
 
 日志均写入./log 目录下的对应日志文件。
 
-- ./app.log，一般的 info 级别的日志，供运维日常使用
-- ./error.log，仅输出 warn 级别以上日志，供运维日常使用
-- ./debug.log，默认不输出，需要 ./log/config.json 设置，供运维和开发诊断问题使用
+- ./log/app.log，一般的 info 级别的日志，供运维日常使用
+- ./log/error.log，仅输出 warn 级别以上日志，供运维日常使用
+- ./log/debug.log，默认不输出，需要 ./config/config.json 设置，供运维和开发诊断问题使用
 
 ### docker 的使用
 
@@ -135,6 +142,7 @@ docker 的使用参考了[Docker and Node.js Best Practices](https://github.com/
 
 ## 版本历史
 
+- 0.0.8 配置文件和日志文件目录分离，通过 proxy 和 factory pattern 实现动态加载配置文件
 - 0.0.7 增加进程退出的处理机制
 - 0.0.6 增加 docker 部署方式，参考[Docker and Node.js Best Practices](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 - 0.0.5 增加编译代码命令，生成生产用代码，并实现运行时切换日志 debug 模式功能
