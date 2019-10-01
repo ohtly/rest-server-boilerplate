@@ -3,16 +3,13 @@ import Router from 'koa-router'
 import koaBody from 'koa-body'
 const router = new Router()
 
-import { logger } from './logger'
 import users from './user'
 import products from './product'
-import { handleShutdown } from './shutdown'
-import delay from 'delay'
 
 const app = new Koa();
 
 router.get('/', (ctx, next) => {
-    ctx.body = 'Hello World ++';
+    ctx.body = 'Hello World';
 });
 
 router.get('/about', (ctx, next) => {
@@ -32,13 +29,5 @@ app
     .use(router.routes())
     .use(router.allowedMethods());
 
-const server = app.listen(3000);
-handleShutdown(server, {
-    async onShutdown() {
-        // 模拟一个关闭数据库连接的过程
-        await delay(500)
-        logger.info('release connection.')
-    }
-})
+export default app
 
-logger.info(`server startup, visit http://localhost:3000`)

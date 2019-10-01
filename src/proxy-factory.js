@@ -1,3 +1,5 @@
+// es6 proxy只能实现静态代理，即target一旦设置就不能改了
+// 这里参考 https://stackoverflow.com/a/39481944 实现了动态代理
 
 let mutableTarget;
 let mutableHandler;

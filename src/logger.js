@@ -14,14 +14,19 @@ let setDebug = function (debug) {
 }
 
 // 生产环境的日志
-const debugTransport = new transports.File({ filename: './log/debug.log', level: 'debug' })
+const defaultLogRootPath = './log'
+let appLogPath = `${defaultLogRootPath}/app.log`
+let errorLogPath = `${defaultLogRootPath}/error.log`
+let debugLogPath = `${defaultLogRootPath}/debug.log`
+
+const debugTransport = new transports.File({ filename: debugLogPath, level: 'debug' })
 debugTransport.silent = !config.debug
 
 const prodLogger = createLogger(
     {
         transports: [
-            new transports.File({ filename: './log/app.log', level: 'info' }),
-            new transports.File({ filename: './log/error.log', level: 'warn' }),
+            new transports.File({ filename: appLogPath, level: 'info' }),
+            new transports.File({ filename: errorLogPath, level: 'warn' }),
             debugTransport
         ],
         format: format.simple()
