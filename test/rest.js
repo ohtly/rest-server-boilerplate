@@ -1,4 +1,4 @@
-import app from '../src/app'
+import app from '../dist/app'
 import assert from 'assert'
 import supertest from 'supertest'
 
