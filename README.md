@@ -148,6 +148,7 @@ docker 的使用参考了[Docker and Node.js Best Practices](https://github.com/
 
 ## 版本历史
 
+- 0.0.10 增加 github actions 的支持，编写 actions 配置文件，实现基本的 ci/cd(持续集成)功能，生成 docker image 并 push 到[docker hub](https://cloud.docker.com/repository/registry-1.docker.io/marshalw/rest-server)
 - 0.0.9 增加 mocha 和 supertest，实现 test 机制
 - 0.0.8 配置文件和日志文件目录分离，通过 proxy 和 factory pattern 实现动态加载配置文件
 - 0.0.7 增加进程退出的处理机制
