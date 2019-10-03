@@ -68,6 +68,12 @@ npm run build
 npm start
 ```
 
+#### 测试
+
+```
+npm test
+```
+
 ### 日志
 
 日志使用 winston。
@@ -142,6 +148,7 @@ docker 的使用参考了[Docker and Node.js Best Practices](https://github.com/
 
 ## 版本历史
 
+- 0.0.9 增加 mocha 和 supertest，实现 test 机制
 - 0.0.8 配置文件和日志文件目录分离，通过 proxy 和 factory pattern 实现动态加载配置文件
 - 0.0.7 增加进程退出的处理机制
 - 0.0.6 增加 docker 部署方式，参考[Docker and Node.js Best Practices](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)

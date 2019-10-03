@@ -23,12 +23,10 @@ describe('restful service test', function () {
 
     describe('user', () => {
         it('get user /:id', async () => {
-            await request.get('/user/1')
+            let response = await request.get('/user/1')
                 .set('Accept', 'application/json')
                 .expect('Content-Type', /json/).expect(200)
-                .then(response => {
-                    assert(response.body.name, 'Joe')
-                })
+            assert(response.body.name, 'Joe')
         })
     })
 })
