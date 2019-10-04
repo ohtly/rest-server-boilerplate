@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "NODE_ENV=development npx nodemon ./src/index.js --exec babel-node",
     "start": "NODE_ENV=production node ./dist/index || true",
-    "build": "rm -Rf ./dist && babel ./src --out-dir ./dist",
-    "config":"if [ ! -e ./config/config.json ]; then cp ./config/config.json.template ./config/config.json; else echo \"File exists, do nothing\"; fi",
+    "build": "rm -Rf ./dist && babel ./src --out-dir ./dist --source-maps inline --copy-files && npm run config",
+    "config": "mkdir -p ./config && if [ ! -e ./config/config.json ]; then cp ./dist/config.json.template ./config/config.json; else echo \"File exists, do nothing\"; fi",
     "test": "npm run config && NODE_ENV=development mocha --exit"
   },
   "repository": {

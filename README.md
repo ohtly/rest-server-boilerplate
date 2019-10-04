@@ -146,6 +146,12 @@ docker run -p 3000:3000 -it --init -u "node"  YOUR_DOCKER_USER_NAME/rest-server
 
 docker 的使用参考了[Docker and Node.js Best Practices](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 
+使用本地目录存放日志：
+
+```
+docker run -p 3000:3000 -it --init -u "node" -v /YOUR_LOG_PATH:/app/log  YOUR_DOCKER_USER_NAME/rest-server
+```
+
 ## 版本历史
 
 - 0.0.10 增加 github actions 的支持，编写 actions 配置文件，实现基本的 ci/cd(持续集成)功能，生成 docker image 并 push 到[docker hub](https://cloud.docker.com/repository/registry-1.docker.io/marshalw/rest-server)
