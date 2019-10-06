@@ -7,8 +7,6 @@ export default {
             id: parseInt(id),
             name: 'Joe'
         }
-        let a = {}
-        console.log(`a.list[0].name is : ${a.list[0].name}`)
         ctx.body = result
     },
     create: function (ctx) {
