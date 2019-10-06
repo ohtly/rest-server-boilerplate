@@ -1,3 +1,4 @@
+import 'source-map-support/register'
 import Koa from 'koa'
 import Router from 'koa-router'
 import koaBody from 'koa-body'
