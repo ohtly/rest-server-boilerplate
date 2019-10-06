@@ -1,6 +1,9 @@
 name: Node CI
 
-on: [push]
+on:
+  push:
+    tags:
+      - "*"
 
 jobs:
   build:
@@ -29,5 +32,4 @@ jobs:
           name: marshalw/rest-server
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-
 # https://github.com/marketplace/actions/publish-docker
